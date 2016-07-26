@@ -17,6 +17,7 @@ package org.raml.v2.internal.impl.commons.type;
 
 import org.raml.v2.internal.impl.commons.nodes.TypeDeclarationNode;
 import org.raml.v2.internal.impl.v10.type.TypeVisitor;
+import org.raml.yagi.framework.nodes.ErrorNode;
 
 public class XmlSchemaExternalType extends BaseType implements SchemaBasedResolvedType
 {
@@ -47,6 +48,12 @@ public class XmlSchemaExternalType extends BaseType implements SchemaBasedResolv
     public ResolvedType mergeFacets(ResolvedType with)
     {
         return copy();
+    }
+
+    @Override
+    public ErrorNode validateFacets()
+    {
+        return null;
     }
 
     @Override

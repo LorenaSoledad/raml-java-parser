@@ -17,6 +17,7 @@ package org.raml.v2.internal.impl.v10.type;
 
 import org.raml.v2.internal.impl.commons.type.ResolvedType;
 import org.raml.v2.internal.impl.commons.nodes.TypeDeclarationNode;
+import org.raml.yagi.framework.nodes.ErrorNode;
 
 import java.util.List;
 
@@ -71,6 +72,12 @@ public class FileResolvedType extends XmlFacetsCapableType
             result.setFileTypes(fileTypeDefinition.getFileTypes());
         }
         return mergeFacets(result, with);
+    }
+
+    @Override
+    public ErrorNode validateFacets()
+    {
+        return null;
     }
 
     @Override

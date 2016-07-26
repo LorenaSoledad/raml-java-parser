@@ -15,6 +15,7 @@
  */
 package org.raml.v2.internal.impl.v10.type;
 
+import org.raml.yagi.framework.nodes.ErrorNode;
 import org.raml.yagi.framework.nodes.Node;
 import org.raml.v2.internal.impl.commons.type.ResolvedType;
 import org.raml.v2.internal.impl.commons.nodes.TypeDeclarationNode;
@@ -82,6 +83,12 @@ public class ArrayResolvedType extends XmlFacetsCapableType
             result.setItems(((ArrayResolvedType) with).getItems());
         }
         return mergeFacets(result, with);
+    }
+
+    @Override
+    public ErrorNode validateFacets()
+    {
+        return null;
     }
 
     @Override

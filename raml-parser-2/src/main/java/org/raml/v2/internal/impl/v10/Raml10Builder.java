@@ -28,6 +28,7 @@ import java.util.List;
 import org.raml.v2.api.loader.ResourceLoader;
 import org.raml.v2.api.model.v10.RamlFragment;
 import org.raml.v2.internal.impl.commons.phase.DuplicatedPathsTransformer;
+import org.raml.v2.internal.impl.commons.phase.FacetValidationTransformer;
 import org.raml.yagi.framework.grammar.rule.ErrorNodeFactory;
 import org.raml.yagi.framework.nodes.ErrorNode;
 import org.raml.yagi.framework.nodes.Node;
@@ -53,6 +54,7 @@ import org.raml.v2.internal.impl.v10.phase.MediaTypeInjectionPhase;
 import org.raml.v2.internal.utils.ResourcePathUtils;
 import org.raml.v2.internal.utils.StreamUtils;
 import org.raml.v2.internal.utils.RamlTreeNodeDumper;
+import org.raml.yagi.framework.phase.Transformer;
 
 public class Raml10Builder
 {
@@ -182,6 +184,8 @@ public class Raml10Builder
 
         final TransformationPhase schemaValidationPhase = new TransformationPhase(new SchemaValidationTransformer(resourceLoader));
 
+        final TransformationPhase facetValidationPhase = new TransformationPhase(new FacetValidationTransformer());
+
         final ExampleValidationPhase exampleValidationPhase = new ExampleValidationPhase(resourceLoader);
 
         return Arrays.asList(includePhase,
@@ -195,6 +199,7 @@ public class Raml10Builder
                 mediaTypeInjection,
                 grammarPhase,
                 schemaValidationPhase,
+                facetValidationPhase,
                 exampleValidationPhase);
 
     }

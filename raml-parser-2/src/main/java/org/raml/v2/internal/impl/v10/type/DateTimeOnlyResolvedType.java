@@ -17,6 +17,7 @@ package org.raml.v2.internal.impl.v10.type;
 
 import org.raml.v2.internal.impl.commons.type.ResolvedType;
 import org.raml.v2.internal.impl.commons.nodes.TypeDeclarationNode;
+import org.raml.yagi.framework.nodes.ErrorNode;
 
 public class DateTimeOnlyResolvedType extends XmlFacetsCapableType
 {
@@ -46,6 +47,12 @@ public class DateTimeOnlyResolvedType extends XmlFacetsCapableType
     public ResolvedType mergeFacets(ResolvedType with)
     {
         return mergeFacets(copy(), with);
+    }
+
+    @Override
+    public ErrorNode validateFacets()
+    {
+        return null;
     }
 
     @Override

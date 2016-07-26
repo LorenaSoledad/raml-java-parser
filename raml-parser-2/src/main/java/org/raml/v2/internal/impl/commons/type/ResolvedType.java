@@ -17,6 +17,7 @@ package org.raml.v2.internal.impl.commons.type;
 
 import org.raml.v2.internal.impl.commons.nodes.TypeDeclarationNode;
 import org.raml.v2.internal.impl.v10.type.TypeVisitor;
+import org.raml.yagi.framework.nodes.ErrorNode;
 
 import javax.annotation.Nullable;
 
@@ -39,6 +40,8 @@ public interface ResolvedType
      * @return The new type
      */
     ResolvedType mergeFacets(ResolvedType with);
+
+    ErrorNode validateFacets();
 
     /**
      * Dispatch the implementation to the visitor method

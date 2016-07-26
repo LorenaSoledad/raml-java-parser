@@ -240,4 +240,9 @@ public class ErrorNodeFactory
     {
         return new ErrorNode(firstRule + " and " + secondRule + " are mutually exclusive.");
     }
+
+    public static ErrorNode createInvalidFacet(String type, String message)
+    {
+        return new ErrorNode("Invalid facet for type " + type + ": " + message);
+    }
 }

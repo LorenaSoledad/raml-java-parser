@@ -1,0 +1,17 @@
+#%RAML 1.0
+title: Example with headers
+traits:
+  numerable:
+    headers:
+      X-Dept:
+        type: integer
+        multipleOf: 10
+
+/users:
+  get:
+    is: [ numerable ]
+    headers:
+      X-Dept:
+        examples:
+          one: 10
+          two: 35

@@ -73,8 +73,16 @@ public class DiscriminatorBasedRule extends Rule
         else
         {
             final String literalValue = discriminatorValue.getLiteralValue();
+            final String exampleDefinedIn = node.findAncestorWith(TypeDeclarationNode.class).getParent().getChildren().get(0).toString();
+
             Rule value = findType(literalValue);
-            if (value != null)
+            Rule parentValue = findType(exampleDefinedIn);
+
+            if(parentValue != null)
+            {
+                parentValue.apply(node);
+            }
+            else if (value != null)
             {
                 value.apply(node);
             }

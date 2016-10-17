@@ -16,7 +16,6 @@
 package org.raml.yagi.framework.grammar.rule;
 
 import org.raml.yagi.framework.nodes.Node;
-import org.raml.yagi.framework.nodes.StringNode;
 import org.raml.yagi.framework.suggester.ParsingContext;
 import org.raml.yagi.framework.suggester.Suggestion;
 
@@ -26,9 +25,9 @@ import java.util.List;
 
 public class MinPropertiesRule extends Rule
 {
-    private int minProperties;
+    private long minProperties;
 
-    public MinPropertiesRule(int minProperties)
+    public MinPropertiesRule(long minProperties)
     {
         this.minProperties = minProperties;
     }

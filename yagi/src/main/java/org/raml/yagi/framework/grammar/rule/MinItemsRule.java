@@ -26,9 +26,9 @@ import java.util.List;
 
 public class MinItemsRule extends Rule
 {
-    private int minItems;
+    private long minItems;
 
-    public MinItemsRule(int minItems)
+    public MinItemsRule(long minItems)
     {
         this.minItems = minItems;
     }

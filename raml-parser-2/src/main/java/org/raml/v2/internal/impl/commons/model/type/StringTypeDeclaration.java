@@ -41,13 +41,13 @@ public class StringTypeDeclaration extends TypeDeclaration<StringResolvedType>
     }
 
 
-    public Integer minLength()
+    public Long minLength()
     {
         return getResolvedType().getMinLength();
     }
 
 
-    public Integer maxLength()
+    public Long maxLength()
     {
         return getResolvedType().getMaxLength();
     }

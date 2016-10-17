@@ -153,13 +153,13 @@ public class SpecInterfacesV10TestCase
         assertThat(properties, hasSize(6));
         assertUserProperties(properties);
         ArrayTypeDeclaration skills = (ArrayTypeDeclaration) properties.get(5);
-        assertThat(skills.maxItems(), is(3));
+        assertThat(skills.maxItems(), is(3L));
         assertThat(skills.type(), is("string[]"));
         assertThat(superUser.examples(), hasSize(0));
 
         // string type
         StringTypeDeclaration nString = (StringTypeDeclaration) types.get(3);
-        assertThat(nString.maxLength(), is(10));
+        assertThat(nString.maxLength(), is(10L));
         assertThat(nString.pattern(), nullValue());
     }
 

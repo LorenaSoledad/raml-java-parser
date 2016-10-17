@@ -97,32 +97,32 @@ public class ErrorNodeFactory
         return new ErrorNode("Error while reading the input. Reason " + ioe.getMessage());
     }
 
-    public static Node createInvalidMaxLength(int maxLength)
+    public static Node createInvalidMaxLength(long maxLength)
     {
         return new ErrorNode("Expected max length " + maxLength);
     }
 
-    public static Node createInvalidMaxItems(int maxItems)
+    public static Node createInvalidMaxItems(long maxItems)
     {
         return new ErrorNode("Expected max items " + maxItems);
     }
 
-    public static Node createInvalidMinItems(int minItems)
+    public static Node createInvalidMinItems(long minItems)
     {
         return new ErrorNode("Expected min items " + minItems);
     }
 
-    public static Node createInvalidMaxProperties(int maxProperties)
+    public static Node createInvalidMaxProperties(long maxProperties)
     {
         return new ErrorNode("Expected max properties " + maxProperties);
     }
 
-    public static Node createInvalidMinProperties(int minProperties)
+    public static Node createInvalidMinProperties(long minProperties)
     {
         return new ErrorNode("Expected min properties " + minProperties);
     }
 
-    public static Node createInvalidMinLength(int minLength)
+    public static Node createInvalidMinLength(long minLength)
     {
         return new ErrorNode("Expected min length " + minLength);
     }

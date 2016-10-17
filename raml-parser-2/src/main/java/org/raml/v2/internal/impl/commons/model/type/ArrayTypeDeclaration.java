@@ -43,13 +43,13 @@ public class ArrayTypeDeclaration extends TypeDeclaration<ArrayResolvedType>
     }
 
 
-    public Integer minItems()
+    public Long minItems()
     {
         return getResolvedType().getMinItems();
     }
 
 
-    public Integer maxItems()
+    public Long maxItems()
     {
         return getResolvedType().getMaxItems();
     }

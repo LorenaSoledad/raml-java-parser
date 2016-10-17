@@ -15,7 +15,6 @@
  */
 package org.raml.v2.internal.impl.v10.type;
 
-import org.raml.v2.internal.impl.commons.nodes.FacetNode;
 import org.raml.v2.internal.impl.commons.type.ResolvedCustomFacets;
 import org.raml.v2.internal.impl.commons.type.ResolvedType;
 import org.raml.v2.internal.impl.commons.nodes.TypeDeclarationNode;
@@ -34,8 +33,8 @@ import static org.raml.yagi.framework.util.NodeSelector.selectStringCollection;
 public class FileResolvedType extends XmlFacetsCapableType
 {
 
-    private Integer minLength;
-    private Integer maxLength;
+    private Long minLength;
+    private Long maxLength;
     private List<String> fileTypes;
 
     public FileResolvedType(TypeDeclarationNode from)
@@ -43,7 +42,7 @@ public class FileResolvedType extends XmlFacetsCapableType
         super(from, new ResolvedCustomFacets(MIN_LENGTH_KEY_NAME, MAX_LENGTH_KEY_NAME, FORMAT_KEY_NAME));
     }
 
-    public FileResolvedType(TypeDeclarationNode declarationNode, XmlFacets xmlFacets, Integer minLength, Integer maxLength, List<String> fileTypes, ResolvedCustomFacets customFacets)
+    public FileResolvedType(TypeDeclarationNode declarationNode, XmlFacets xmlFacets, Long minLength, Long maxLength, List<String> fileTypes, ResolvedCustomFacets customFacets)
     {
         super(declarationNode, xmlFacets, customFacets);
         this.minLength = minLength;
@@ -102,7 +101,7 @@ public class FileResolvedType extends XmlFacetsCapableType
         return visitor.visitFile(this);
     }
 
-    public Integer getMinLength()
+    public Long getMinLength()
     {
         return minLength;
     }
@@ -120,7 +119,7 @@ public class FileResolvedType extends XmlFacetsCapableType
         }
     }
 
-    public void setMinLength(Integer minLength)
+    public void setMinLength(Long minLength)
     {
         if (minLength != null)
         {
@@ -128,12 +127,12 @@ public class FileResolvedType extends XmlFacetsCapableType
         }
     }
 
-    public Integer getMaxLength()
+    public Long getMaxLength()
     {
         return maxLength;
     }
 
-    public void setMaxLength(Integer maxLength)
+    public void setMaxLength(Long maxLength)
     {
         if (maxLength != null)
         {

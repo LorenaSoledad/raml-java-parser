@@ -168,7 +168,7 @@ public class SpecInterfacesV08TestCase
         assertThat(order.required(), is(false));
         assertThat(order.repeat(), is(true));
         assertTrue(order instanceof StringTypeDeclaration);
-        assertThat(((StringTypeDeclaration) order).maxLength(), is(4));
+        assertThat(((StringTypeDeclaration) order).maxLength(), is(4L));
     }
 
     private void assertMethodBaseUriParameters(List<Parameter> parameters)

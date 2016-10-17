@@ -41,11 +41,11 @@ import org.raml.yagi.framework.nodes.snakeyaml.SYArrayNode;
 
 public class StringResolvedType extends XmlFacetsCapableType
 {
-    private static final int DEFAULT_MIN_LENGTH = 0;
-    private static final int DEFAULT_MAX_LENGTH = Integer.MAX_VALUE;
+    private static final long DEFAULT_MIN_LENGTH = 0;
+    private static final long DEFAULT_MAX_LENGTH = Long.MAX_VALUE;
 
-    private Integer minLength;
-    private Integer maxLength;
+    private Long minLength;
+    private Long maxLength;
     private String pattern;
     private List<String> enums = new ArrayList<>();
 
@@ -55,7 +55,7 @@ public class StringResolvedType extends XmlFacetsCapableType
         super(from, new ResolvedCustomFacets(MIN_LENGTH_KEY_NAME, MAX_LENGTH_KEY_NAME, PATTERN_KEY_NAME));
     }
 
-    public StringResolvedType(TypeDeclarationNode declarationNode, XmlFacets xmlFacets, Integer minLength, Integer maxLength, String pattern, List<String> enums, ResolvedCustomFacets customFacets)
+    public StringResolvedType(TypeDeclarationNode declarationNode, XmlFacets xmlFacets, Long minLength, Long maxLength, String pattern, List<String> enums, ResolvedCustomFacets customFacets)
     {
         super(declarationNode, xmlFacets, customFacets);
         this.minLength = minLength;
@@ -142,8 +142,8 @@ public class StringResolvedType extends XmlFacetsCapableType
 
     private ErrorNode validateFacets()
     {
-        int minimumLength = minLength != null ? minLength : DEFAULT_MIN_LENGTH;
-        int maximumLength = maxLength != null ? maxLength : DEFAULT_MAX_LENGTH;
+        long minimumLength = minLength != null ? minLength : DEFAULT_MIN_LENGTH;
+        long maximumLength = maxLength != null ? maxLength : DEFAULT_MAX_LENGTH;
 
         // Validating conflicts between the length facets
         if (maximumLength < minimumLength)
@@ -181,7 +181,7 @@ public class StringResolvedType extends XmlFacetsCapableType
         }
     }
 
-    private void setMinLength(Integer minLength)
+    private void setMinLength(Long minLength)
     {
         if (minLength != null)
         {
@@ -189,7 +189,7 @@ public class StringResolvedType extends XmlFacetsCapableType
         }
     }
 
-    private void setMaxLength(Integer maxLength)
+    private void setMaxLength(Long maxLength)
     {
         if (maxLength != null)
         {
@@ -211,13 +211,13 @@ public class StringResolvedType extends XmlFacetsCapableType
     }
 
     @Nullable
-    public Integer getMinLength()
+    public Long getMinLength()
     {
         return minLength;
     }
 
     @Nullable
-    public Integer getMaxLength()
+    public Long getMaxLength()
     {
         return maxLength;
     }

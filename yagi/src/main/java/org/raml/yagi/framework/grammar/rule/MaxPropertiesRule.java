@@ -25,9 +25,9 @@ import java.util.List;
 
 public class MaxPropertiesRule extends Rule
 {
-    private int maxProperties;
+    private long maxProperties;
 
-    public MaxPropertiesRule(int maxProperties)
+    public MaxPropertiesRule(long maxProperties)
     {
         this.maxProperties = maxProperties;
     }

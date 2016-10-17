@@ -1,0 +1,23 @@
+#%RAML 1.0
+title: Exercise bug in maximum facet
+types:
+  Foo:
+    type: object
+    properties:
+      bar:
+        type: integer
+        maximum: 2147483647
+        example: 2147483648
+      baz:
+        type: integer
+        maximum: 2147483648 #Using maximum integer value 2^32-1
+        example: 2147483649
+      baz_wide:
+        type: integer
+        format: int64
+        maximum: 9223372036854775806
+        example: 9223372036854775807
+      urp:
+        type: number
+        maximum: 9223372036854775806
+        example: 9223372036854775807

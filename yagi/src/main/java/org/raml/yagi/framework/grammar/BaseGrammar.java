@@ -201,7 +201,7 @@ public class BaseGrammar
      * @param range The valid range
      * @return The rule
      */
-    public IntegerTypeRule range(Range<Integer> range)
+    public IntegerTypeRule range(Range<Long> range)
     {
         return new IntegerTypeRule(range);
     }

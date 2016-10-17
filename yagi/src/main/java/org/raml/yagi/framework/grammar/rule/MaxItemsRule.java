@@ -26,9 +26,9 @@ import org.raml.yagi.framework.suggester.Suggestion;
 
 public class MaxItemsRule extends Rule
 {
-    private int maxItems;
+    private long maxItems;
 
-    public MaxItemsRule(int maxItems)
+    public MaxItemsRule(long maxItems)
     {
         this.maxItems = maxItems;
     }

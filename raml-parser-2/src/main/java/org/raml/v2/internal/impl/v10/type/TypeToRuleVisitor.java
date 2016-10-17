@@ -108,13 +108,13 @@ public class TypeToRuleVisitor implements TypeVisitor<Rule>
 
         if (stringTypeNode.getMaxLength() != null)
         {
-            Integer maxLength = stringTypeNode.getMaxLength();
+            Long maxLength = stringTypeNode.getMaxLength();
             typeRule.and(new MaxLengthRule(maxLength));
         }
 
         if (stringTypeNode.getMinLength() != null)
         {
-            Integer maxLength = stringTypeNode.getMinLength();
+            Long maxLength = stringTypeNode.getMinLength();
             typeRule.and(new MinLengthRule(maxLength));
         }
         return typeRule;

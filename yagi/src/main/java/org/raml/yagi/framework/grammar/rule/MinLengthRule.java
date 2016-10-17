@@ -27,9 +27,9 @@ import java.util.List;
 
 public class MinLengthRule extends Rule
 {
-    private int minLength;
+    private long minLength;
 
-    public MinLengthRule(int minLength)
+    public MinLengthRule(long minLength)
     {
         this.minLength = minLength;
     }

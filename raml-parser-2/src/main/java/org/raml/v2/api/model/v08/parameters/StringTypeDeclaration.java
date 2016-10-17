@@ -42,6 +42,6 @@ public interface StringTypeDeclaration extends Parameter
     /**
      * (Optional, applicable only for parameters of type string) The maxLength attribute specifies the parameter value's maximum number of characters.
      **/
-    Integer maxLength();
+    Long maxLength();
 
 }

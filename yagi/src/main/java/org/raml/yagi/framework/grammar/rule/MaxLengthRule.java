@@ -28,9 +28,9 @@ import org.raml.yagi.framework.suggester.Suggestion;
 
 public class MaxLengthRule extends Rule
 {
-    private int maxLength;
+    private long maxLength;
 
-    public MaxLengthRule(int maxLength)
+    public MaxLengthRule(long maxLength)
     {
         this.maxLength = maxLength;
     }

@@ -49,12 +49,12 @@ public class ObjectTypeDeclaration extends TypeDeclaration<ObjectResolvedType>
     }
 
 
-    public Integer minProperties()
+    public Long minProperties()
     {
         return getResolvedType().getMinProperties();
     }
 
-    public Integer maxProperties()
+    public Long maxProperties()
     {
         return getResolvedType().getMaxProperties();
     }

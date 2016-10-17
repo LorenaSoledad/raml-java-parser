@@ -44,8 +44,8 @@ import org.raml.yagi.framework.nodes.Node;
 
 public class ObjectResolvedType extends XmlFacetsCapableType
 {
-    private Integer minProperties;
-    private Integer maxProperties;
+    private Long minProperties;
+    private Long maxProperties;
     private Boolean additionalProperties;
     private String discriminator;
     private String discriminatorValue;
@@ -54,8 +54,8 @@ public class ObjectResolvedType extends XmlFacetsCapableType
 
     public ObjectResolvedType(TypeDeclarationNode declarationNode,
             XmlFacets xmlFacets,
-            Integer minProperties,
-            Integer maxProperties,
+            Long minProperties,
+            Long maxProperties,
             Boolean additionalProperties,
             String discriminator,
             String discriminatorValue,
@@ -245,8 +245,8 @@ public class ObjectResolvedType extends XmlFacetsCapableType
 
     public ErrorNode validateFacets()
     {
-        int min = minProperties != null ? minProperties : 0;
-        int max = maxProperties != null ? maxProperties : Integer.MAX_VALUE;
+        long min = minProperties != null ? minProperties : 0;
+        long max = maxProperties != null ? maxProperties : Integer.MAX_VALUE;
         if (max < min)
         {
             return RamlErrorNodeFactory.createInvalidFacetState(getTypeName(), "maxProperties must be greater than or equal to minProperties");
@@ -275,12 +275,12 @@ public class ObjectResolvedType extends XmlFacetsCapableType
         return visitor.visitObject(this);
     }
 
-    public Integer getMinProperties()
+    public Long getMinProperties()
     {
         return minProperties;
     }
 
-    public void setMinProperties(Integer minProperties)
+    public void setMinProperties(Long minProperties)
     {
         if (minProperties != null)
         {
@@ -288,12 +288,12 @@ public class ObjectResolvedType extends XmlFacetsCapableType
         }
     }
 
-    public Integer getMaxProperties()
+    public Long getMaxProperties()
     {
         return maxProperties;
     }
 
-    public void setMaxProperties(Integer maxProperties)
+    public void setMaxProperties(Long maxProperties)
     {
         if (maxProperties != null)
         {

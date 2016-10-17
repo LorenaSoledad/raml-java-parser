@@ -30,13 +30,13 @@ public interface StringTypeDeclaration extends TypeDeclaration
     /**
      * Minimum length of the string
      **/
-    Integer minLength();
+    Long minLength();
 
 
     /**
      * Maximum length of the string
      **/
-    Integer maxLength();
+    Long maxLength();
 
 
     /**

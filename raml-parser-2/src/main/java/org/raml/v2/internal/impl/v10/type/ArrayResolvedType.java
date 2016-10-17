@@ -38,10 +38,10 @@ public class ArrayResolvedType extends XmlFacetsCapableType
 
     private ResolvedType items;
     private Boolean uniqueItems;
-    private Integer minItems;
-    private Integer maxItems;
+    private Long minItems;
+    private Long maxItems;
 
-    public ArrayResolvedType(TypeDeclarationNode node, XmlFacets xmlFacets, ResolvedType items, Boolean uniqueItems, Integer minItems, Integer maxItems, ResolvedCustomFacets customFacets)
+    public ArrayResolvedType(TypeDeclarationNode node, XmlFacets xmlFacets, ResolvedType items, Boolean uniqueItems, Long minItems, Long maxItems, ResolvedCustomFacets customFacets)
     {
         super(node, xmlFacets, customFacets);
         this.items = items;
@@ -114,8 +114,8 @@ public class ArrayResolvedType extends XmlFacetsCapableType
 
     public void validateState()
     {
-        int min = minItems != null ? minItems : 0;
-        int max = maxItems != null ? maxItems : Integer.MAX_VALUE;
+        long min = minItems != null ? minItems : 0;
+        long max = maxItems != null ? maxItems : Long.MAX_VALUE;
         if (max < min)
         {
             getTypeDeclarationNode().replaceWith(RamlErrorNodeFactory.createInvalidFacetState(getTypeName(), "maxItems must be greater than or equal to minItems."));
@@ -175,12 +175,12 @@ public class ArrayResolvedType extends XmlFacetsCapableType
         }
     }
 
-    public Integer getMinItems()
+    public Long getMinItems()
     {
         return minItems;
     }
 
-    private void setMinItems(Integer minItems)
+    private void setMinItems(Long minItems)
     {
         if (minItems != null)
         {
@@ -188,12 +188,12 @@ public class ArrayResolvedType extends XmlFacetsCapableType
         }
     }
 
-    public Integer getMaxItems()
+    public Long getMaxItems()
     {
         return maxItems;
     }
 
-    private void setMaxItems(Integer maxItems)
+    private void setMaxItems(Long maxItems)
     {
         if (maxItems != null)
         {

@@ -64,7 +64,7 @@ public class NodeSelector
     }
 
     @Nullable
-    public static Integer selectIntValue(String path, Node from)
+    public static Long selectIntValue(String path, Node from)
     {
         return selectType(path, from, null);
     }

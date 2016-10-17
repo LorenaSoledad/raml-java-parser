@@ -51,11 +51,11 @@ public class DivisorValueRule extends Rule
     {
         if (node instanceof IntegerNode)
         {
-            if (divisorValue.intValue() == 0 && Integer.valueOf(0).equals(((IntegerNode) node).getValue()))
+            if (divisorValue.longValue() == 0 && Long.valueOf(0).equals(((IntegerNode) node).getValue()))
             {
                 return true;
             }
-            return divisorValue.intValue() != 0 && ((IntegerNode) node).getValue() % divisorValue.intValue() == 0;
+            return divisorValue.longValue() != 0 && ((IntegerNode) node).getValue() % divisorValue.longValue() == 0L;
         }
         else if (node instanceof FloatingNode)
         {
@@ -80,7 +80,7 @@ public class DivisorValueRule extends Rule
         }
         else
         {
-            if ((node instanceof IntegerNode && divisorValue.intValue() == 0) ||
+            if ((node instanceof IntegerNode && divisorValue.longValue() == 0) ||
                 node instanceof FloatingNode && divisorValue.floatValue() == 0f)
             {
                 return ErrorNodeFactory.createInvalidDivisorValue();

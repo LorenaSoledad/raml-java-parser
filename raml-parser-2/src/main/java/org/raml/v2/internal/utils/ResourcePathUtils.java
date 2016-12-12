@@ -15,6 +15,8 @@
  */
 package org.raml.v2.internal.utils;
 
+import org.apache.commons.io.FilenameUtils;
+
 import java.io.File;
 
 public class ResourcePathUtils
@@ -31,6 +33,9 @@ public class ResourcePathUtils
         String result = relativePath;
         if (!isAbsolute(relativePath))
         {
+            // Converting the basePath to use the correct file separator depending on the OS
+            basePath = FilenameUtils.separatorsToSystem(basePath);
+
             // This is for file based path
             int lastSlash = basePath.lastIndexOf(File.separator);
             if (lastSlash == -1)

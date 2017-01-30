@@ -37,6 +37,7 @@ public class InflectorTestCase
     public void singularizer()
     {
         assertThat(singularize("users"), is("user"));
+        assertThat(singularize("media"), is("media"));
     }
 
     @Test

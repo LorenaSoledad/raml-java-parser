@@ -88,7 +88,7 @@ public class InflectorBase
         addIrregular("foot", "feet");
         addIrregular("tooth", "teeth");
 
-        uncountables = Arrays.asList("equipment", "information", "rice", "money", "species", "series", "fish", "sheep");
+        uncountables = Arrays.asList("equipment", "information", "rice", "money", "species", "series", "fish", "sheep", "media");
     }
 
     private static void addPlural(String rule, String replacement)

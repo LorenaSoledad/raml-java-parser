@@ -21,6 +21,7 @@ import org.raml.v2.internal.impl.commons.nodes.TypeDeclarationNode;
 import org.raml.v2.internal.impl.commons.nodes.TypeExpressionNode;
 import org.raml.v2.internal.impl.commons.rule.RamlErrorNodeFactory;
 import org.raml.v2.internal.impl.commons.type.ResolvedCustomFacets;
+import org.raml.v2.internal.impl.commons.type.ResolvedType;
 import org.raml.v2.internal.impl.v10.grammar.Raml10Grammar;
 import org.raml.v2.internal.impl.v10.rules.TypesUtils;
 import org.raml.yagi.framework.grammar.rule.AnyOfRule;
@@ -40,7 +41,7 @@ public class IntegerResolvedType extends NumberResolvedType
     }
 
     @Override
-    public NumberResolvedType copy()
+    public IntegerResolvedType copy()
     {
         return new IntegerResolvedType(getTypeDeclarationNode(), getXmlFacets().copy(), getMinimum(), getMaximum(), getMultiple(), getFormat(), customFacets.copy());
     }
@@ -130,4 +131,10 @@ public class IntegerResolvedType extends NumberResolvedType
         return TypeId.INTEGER.getType();
     }
 
+    @Override
+    public boolean doAccept(ResolvedType valueType)
+    {
+        // The only value that an integer accepts is another integer
+        return valueType instanceof IntegerResolvedType;
+    }
 }

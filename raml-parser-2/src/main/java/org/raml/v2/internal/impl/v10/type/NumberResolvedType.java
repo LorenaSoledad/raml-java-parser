@@ -126,7 +126,21 @@ public class NumberResolvedType extends XmlFacetsCapableType
     public ResolvedType mergeFacets(ResolvedType with)
     {
         final NumberResolvedType result = copy();
-        if (with instanceof NumberResolvedType)
+
+        if (with instanceof IntegerResolvedType)
+        {
+            final IntegerResolvedType integerResult = ((IntegerResolvedType) with).copy();
+
+            NumberResolvedType numberTypeDefinition = (NumberResolvedType) with;
+            integerResult.setMinimum(numberTypeDefinition.getMinimum());
+            integerResult.setMaximum(numberTypeDefinition.getMaximum());
+            integerResult.setMultiple(numberTypeDefinition.getMultiple());
+            integerResult.setFormat(numberTypeDefinition.getFormat());
+            integerResult.setEnums(numberTypeDefinition.getEnums());
+            integerResult.customFacets = integerResult.customFacets.mergeWith(with.customFacets());
+            return mergeFacets(integerResult, with);
+        }
+        else if (with instanceof NumberResolvedType)
         {
             NumberResolvedType numberTypeDefinition = (NumberResolvedType) with;
             result.setMinimum(numberTypeDefinition.getMinimum());
@@ -135,6 +149,7 @@ public class NumberResolvedType extends XmlFacetsCapableType
             result.setFormat(numberTypeDefinition.getFormat());
             result.setEnums(numberTypeDefinition.getEnums());
         }
+
         result.customFacets = result.customFacets.mergeWith(with.customFacets());
         return mergeFacets(result, with);
     }
@@ -238,7 +253,7 @@ public class NumberResolvedType extends XmlFacetsCapableType
         }
     }
 
-    private void setMinimum(Number minimum)
+    protected void setMinimum(Number minimum)
     {
         if (minimum != null)
         {
@@ -251,7 +266,7 @@ public class NumberResolvedType extends XmlFacetsCapableType
         return maximum;
     }
 
-    private void setMaximum(Number maximum)
+    protected void setMaximum(Number maximum)
     {
         if (maximum != null)
         {
@@ -264,7 +279,7 @@ public class NumberResolvedType extends XmlFacetsCapableType
         return multiple;
     }
 
-    private void setMultiple(Number multiple)
+    protected void setMultiple(Number multiple)
     {
         if (multiple != null)
         {
@@ -277,7 +292,7 @@ public class NumberResolvedType extends XmlFacetsCapableType
         return format;
     }
 
-    private void setFormat(String format)
+    protected void setFormat(String format)
     {
         if (format != null)
         {

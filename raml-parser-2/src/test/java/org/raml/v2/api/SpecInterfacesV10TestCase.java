@@ -160,7 +160,8 @@ public class SpecInterfacesV10TestCase
         assertUserProperties(properties);
         ArrayTypeDeclaration skills = (ArrayTypeDeclaration) properties.get(5);
         assertThat(skills.maxItems(), is(3));
-        assertThat(skills.type(), is("string[]"));
+        assertThat(skills.type(), is("array"));
+        assertThat(skills.items().type(), is("string"));
         assertThat(superUser.examples(), hasSize(0));
         List<TypeDeclaration> parentTypesSuperUser = superUser.parentTypes();
         assertThat(parentTypesSuperUser, hasSize(1));
@@ -497,6 +498,8 @@ public class SpecInterfacesV10TestCase
         ArrayTypeDeclaration arrayType = (ArrayTypeDeclaration) queryParameters.get(1);
         assertThat(arrayType.validate("- a\n- 2\n").size(), is(0));
         assertTrue(arrayType.items() instanceof UnionTypeDeclaration);
+        assertThat(arrayType.type(), is("array"));
+        assertThat(arrayType.items().type(), is("string | number"));
 
         assertThat(queryParameters.get(2).name(), is("three"));
         assertThat(queryParameters.get(2).type(), is("integer"));

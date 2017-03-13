@@ -46,6 +46,7 @@ import org.raml.v2.internal.impl.v10.nodes.LibraryLinkNode;
 import org.raml.v2.internal.impl.v10.nodes.LibraryNode;
 import org.raml.v2.internal.impl.v10.nodes.NativeTypeExpressionNode;
 import org.raml.v2.internal.impl.v10.nodes.PropertyNode;
+import org.raml.v2.internal.impl.v10.nodes.factory.ArrayItemsDefaultValue;
 import org.raml.v2.internal.impl.v10.nodes.factory.DefaultMimeTypeDeclarationFactory;
 import org.raml.v2.internal.impl.v10.nodes.factory.InlineTypeDeclarationFactory;
 import org.raml.v2.internal.impl.v10.nodes.factory.OverlayableSimpleTypeFactory;
@@ -560,7 +561,7 @@ public class Raml10Grammar extends BaseRamlGrammar
 
     public KeyValueRule itemsField()
     {
-        return field(string(ITEMS_KEY_NAME), typeRef())
+        return field(string(ITEMS_KEY_NAME), typeRef()).defaultValue(new ArrayItemsDefaultValue())
                                                        .then(FacetNode.class)
                                                        .description(
                                                                "Indicates the type all items in the array are inherited from. Can be a reference to an existing type or an inline type declaration.");

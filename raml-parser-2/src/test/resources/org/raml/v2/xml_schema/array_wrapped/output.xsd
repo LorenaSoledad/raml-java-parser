@@ -10,20 +10,21 @@
             <element name="friends">
                 <complexType>
                     <sequence>
-                        <element name="Friend" maxOccurs="unbounded" type="tns:Friend"/>
+                        <element maxOccurs="unbounded" name="friends">
+                            <complexType>
+                                <sequence>
+                                    <element name="name">
+                                        <simpleType>
+                                            <restriction base="string"/>
+                                        </simpleType>
+                                    </element>
+                                    <any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                                </sequence>
+                            </complexType>
+                        </element>
                     </sequence>
                 </complexType>
             </element>
-        </sequence>
-    </complexType>
-    <complexType name="Friend">
-        <sequence>
-            <element name="name">
-                <simpleType>
-                    <restriction base="string"/>
-                </simpleType>
-            </element>
-            <any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
         </sequence>
     </complexType>
 </schema>

@@ -7,17 +7,18 @@
                     <restriction base="string"/>
                 </simpleType>
             </element>
-            <element maxOccurs="unbounded" name="Friend" type="tns:Friend"/>
-        </sequence>
-    </complexType>
-    <complexType name="Friend">
-        <sequence>
-            <element name="name">
-                <simpleType>
-                    <restriction base="string"/>
-                </simpleType>
+            <element maxOccurs="unbounded" name="Friend">
+                <complexType>
+                    <sequence>
+                        <element name="name">
+                            <simpleType>
+                                <restriction base="string"/>
+                            </simpleType>
+                        </element>
+                        <any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                    </sequence>
+                </complexType>
             </element>
-            <any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
         </sequence>
     </complexType>
 </schema>

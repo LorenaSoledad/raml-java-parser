@@ -111,10 +111,8 @@ public class ArrayTypeExpressionNode extends AbstractRamlNode implements TypeExp
     @Override
     public String getValue()
     {
-        final TypeExpressionNode of = of();
-        String typeExpression = of != null ? of.getTypeExpressionText() : null;
-        return typeExpression != null ? addParenthesesIfNeeded(typeExpression) + "[]" : null;
-
+        // Type must always be "array", to be consistent with the way an array using type:array is defined
+        return "array";
     }
 
     @Override

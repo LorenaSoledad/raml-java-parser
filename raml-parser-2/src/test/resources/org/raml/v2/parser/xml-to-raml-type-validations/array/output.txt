@@ -31,7 +31,7 @@ RamlDocumentNode (Start: 11 , End: 688, On: input.raml, Source: SYObjectNode)
                                 TypeDeclarationNode (Start: 97 , End: 105, On: input.raml, Source: SYStringNode)
                                     KeyValueNodeImpl (Start: -1 , End: 111)
                                         StringNodeImpl: "type" (Start: -1 , End: -1)
-                                        ArrayTypeExpressionNode: Friend[] (Start: 103 , End: 111, On: input.raml, Source: ArrayTypeExpressionNode)
+                                        ArrayTypeExpressionNode: array (Start: 103 , End: 111, On: input.raml, Source: ArrayTypeExpressionNode)
                                             NamedTypeExpressionNode Friend -> {TypeDeclarationNode RefStart: 152 , RefEnd: 231} (Start: 103 , End: 109, On: input.raml, Source: NamedTypeExpressionNode)
                                     KeyValueNodeImpl (Start: -1 , End: -1)
                                         StringNodeImpl: "displayName" (Start: -1 , End: -1)
@@ -39,6 +39,18 @@ RamlDocumentNode (Start: 11 , End: 688, On: input.raml, Source: SYObjectNode)
                                             KeyValueNodeImpl (Start: -1 , End: -1)
                                                 StringNodeImpl: "value" (Start: -1 , End: -1)
                                                 OverlayableStringNode: "friends" (Start: -1 , End: -1, Source: SYStringNode)
+                                    FacetNode (Start: -1 , End: -1, Source: KeyValueNodeImpl)
+                                        StringNodeImpl: "items" (Start: -1 , End: -1)
+                                        TypeDeclarationNode (Start: -1 , End: -1, Source: OverlayableStringNode)
+                                            KeyValueNodeImpl (Start: -1 , End: 11)
+                                                StringNodeImpl: "type" (Start: -1 , End: -1)
+                                                NamedTypeExpressionNode Friend -> {TypeDeclarationNode RefStart: 152 , RefEnd: 231} (Start: 5 , End: 11, On: [artificial node], Source: NamedTypeExpressionNode)
+                                            KeyValueNodeImpl (Start: -1 , End: -1)
+                                                StringNodeImpl: "displayName" (Start: -1 , End: -1)
+                                                ObjectNodeImpl (Start: -1 , End: -1)
+                                                    KeyValueNodeImpl (Start: -1 , End: -1)
+                                                        StringNodeImpl: "value" (Start: -1 , End: -1)
+                                                        OverlayableStringNode: "items" (Start: -1 , End: -1, Source: StringNodeImpl)
                     FacetNode (Start: 110 , End: 137, On: input.raml, Source: KeyValueNodeImpl)
                         SYStringNode: "additionalProperties" (Start: 110 , End: 130, On: input.raml)
                         SYBooleanNode: false (Start: 132 , End: 137, On: input.raml)
@@ -98,19 +110,7 @@ RamlDocumentNode (Start: 11 , End: 688, On: input.raml, Source: SYObjectNode)
                                         NamedTypeExpressionNode root -> {TypeDeclarationNode RefStart: 51 , RefEnd: 140} (Start: 293 , End: 297, On: input.raml, Source: SYStringNode)
                                     ExampleDeclarationNode (Start: 308 , End: 688, On: input.raml, Source: KeyValueNodeImpl)
                                         SYStringNode: "example" (Start: 308 , End: 315, On: input.raml)
-                                        SYStringNode: "<root>
-  <name>robert</name>
-  <Friend>
-    <name>daenerys</name>
-  </Friend>
-  <Friend>
-    <name>stannis</name>
-  </Friend>
-  <Friend>
-    <name>jon</name>
-    <night-watch>true</night-watch>
-  </Friend>
-</root>" (Start: 317 , End: 688, On: input.raml)
+                                        ErrorNode: "Error validating XML. Error: cvc-complex-type.2.4.a: Invalid content was found starting with element 'Friend'. One of '{"http://validationnamespace.raml.org":friends}' is expected." (Start: 317 , End: 688, On: input.raml, Source: SYStringNode)
                                     KeyValueNodeImpl (Start: -1 , End: -1)
                                         StringNodeImpl: "displayName" (Start: -1 , End: -1)
                                         ObjectNodeImpl (Start: -1 , End: -1)
